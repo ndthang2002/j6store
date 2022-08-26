@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<!-- link css -->
+
+ <link rel="stylesheet" href="css/index.css" />
+ 
+ <!-- link angular js -->
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="app" ng-controller="ctrl" class="col-sm-5 border p-5 form mt-5">
+
+
+<form action="" class= "form">
+
+<div class="input-group mb-3">
+ 
+  <input type="text" ng-model="form.masp" class="form-control" placeholder="ma san pham" >
+</div>
+
+
+<div class="input-group mb-3">
+ 
+  <input type="text" ng-model="form.soluong" class="form-control" placeholder="so luong" >
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control"  ng-model ="form.tensp" placeholder="ten san pham">
+</div>
+
+<button type="button" ng-click="create()"  class="btn btn-primary">create </button>
+<button type="button"  ng-click="update()"  class="btn btn-secondary">update </button>
+<button type="button" ng-click="delete(form)"  class="btn btn-primary">delete</button>
+<button type="button" ng-click="reset()"  class="btn btn-secondary">reset</button>
+</form>
+
+<table  class="table   bg-warning mt-5">
+<thead>
+	
+<tr>
+   <th>ma sp</th>
+   <th>so luong</th>
+   <th>ten sp</th>
+   <th></th>
+   <th>	</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr ng-repeat="item in sanpham">
+  <td>{{item.masp}}</td>
+  <td>{{item.soluong}}</td>
+  <td>{{item.tensp}}</td>
+  <td><a ng-click="edit(item)">edit</a></td>
+  <td><a ng-click="delete(item)" >xoa</a></td>
+</tr>
+
+</tbody>
+</table>
+
+
+<script type="text/javascript" src="js/sanpham.js"></script>
+</body>
+</html>
